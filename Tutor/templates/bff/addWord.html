@@ -1,0 +1,49 @@
+
+{% extends "bff/base.html" %}
+{% load  static   %}
+
+{% block content %}
+
+<h1>Add new word </h1>
+
+<hr>
+<form action="" method="POST">
+   {% csrf_token %}
+    <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <h2></h2><span></span>
+   </div>
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>English</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.en }}</div>
+    </div>
+
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>Brazillian</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.bra }}</div>
+    </div>
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>Like this definition</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.liked }}</div>
+    </div>
+
+
+
+  <button class = "mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+      <i class = "material-icons">add</i>
+    </button>
+
+</form>
+
+
+{% endblock %}
+
+
