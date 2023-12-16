@@ -1,0 +1,49 @@
+
+{% extends "Tutor/base.html" %}
+{% load  static   %}
+
+{% block content %}
+
+<h1>Add new info </h1>
+
+<hr>
+<form action="" method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+    <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <h2></h2><span></span>
+   </div>
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>Title</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.title }}</div>
+    </div>
+
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>Text</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.text }}</div>
+    </div>
+
+  <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet graybox">
+                  <h2>Image</h2></div>
+               <div class = "mdl-cell mdl-cell--8-col mdl-cell--8-col-phone graybox">
+                  {{ form.img }}</div>
+    </div>
+
+
+
+  <button class = "mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+      <i class = "material-icons">add</i>
+    </button>
+
+</form>
+
+
+{% endblock %}
+
+

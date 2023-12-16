@@ -1,0 +1,36 @@
+
+{% extends "Tutor/base.html" %}
+{% load  static   %}
+
+{% block content %}
+
+<h1>Blog </h1>
+
+<hr>
+
+
+
+<div class="row flex-spaces">
+
+{% for p in posts %}
+  <div class="sm-3 col border border-primary">
+
+    <div class="center ">
+        <img src="{{ p.image.url }}" style="width:100%" alt="{{ p }}"><br>
+        {{ p }}<br>
+        <a href="" class="paper-btn btn-secondary">
+        Read more 
+        </a>
+    </div>
+    </div>
+
+
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}
+
+

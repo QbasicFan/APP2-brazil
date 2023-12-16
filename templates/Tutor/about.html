@@ -1,0 +1,86 @@
+
+{% extends "Tutor/base.html" %}
+{% load  static   %}
+
+{% block content %}
+
+<h1>About </h1>
+
+<hr>
+
+<hr>
+
+<div class="row">
+
+
+<div class="sm-6 md-3 lg-3 col border border-secondary">
+<p>Hover me</p>
+<ul>
+
+{% for p in info %}
+<li onmouseover="change('{{ p.id }}')" class="background-danger">{{ p }}
+
+<img  src="{{ p.img }}" alt="Car" style="width:10%">
+</li>
+{% endfor %}
+
+<li>...</li>
+</ul>
+</div>
+
+
+
+<div class="sm-6 md-6 lg-6 col" >
+<h2 id="title">Sport</h2>	
+<img id="im" src="https://th.bing.com/th/id/OIP.0CfbgQXLYazJCbF21NzspQAAAA?rs=1&pid=ImgDetMain" alt="Car" style="width:100%">
+
+
+</div>
+
+
+<div class="sm-6 md-3 lg-3 col border border-6 border-primary">
+<span id="info" class="text-success" >The most popular sport in Brazil is football. The Brazilian men national team is ranked among the best in the world according to the FIFA World Rankings, and has won the World Cup tournament a record five times</span><br>
+
+
+</div>
+
+</div>
+<hr>
+
+
+
+<script type="text/javascript">
+	
+
+function change(n){
+
+n --
+var str ="{% static "img/bf/" %}"+n;
+
+var strInfo =[];
+
+{% for p in info %}
+
+strInfo.push({'im':'{{ p.img }}','title':'{{ p.title }}','text':'{{ p.text }}' })
+
+{% endfor %}
+
+//var setClass = "border-"+Math.floor((Math.random() * 4) + 2);
+
+
+
+document.getElementById("im").src=strInfo[n]['im'];
+document.getElementById("info").innerHTML=strInfo[n]['text'];
+document.getElementById("title").innerHTML=strInfo[n]['title'];
+
+
+//document.getElementById("info").className = "border "+setClass+" border-primary"
+}
+
+	
+</script>
+
+
+{% endblock %}
+
+

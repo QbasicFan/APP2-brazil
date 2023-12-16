@@ -1,0 +1,116 @@
+
+{% extends "Tutor/base.html" %}
+{% load  static   %}
+
+{% block content %}
+
+
+
+<hr>
+
+<input type="text" name="search" id="myInput" onkeyup="myFunction()" placeholder="Search here" title="Search here">
+
+<div id="pageContent">
+    0000
+</div>
+
+
+
+
+<audio id="myAudio">
+  <source src="{% static "sounds/gm.ogg" %}" type="audio/ogg">
+  <source src="{% static "sounds/gm.mp3" %}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<hr>
+
+        <ul id="myUL">
+<div id="id01" class="container row flex-spaces">
+{% for p in dd %}
+
+<li class="sm-6 md-4 lg-4 col">
+    <i class="card  animated flipInX" >
+<b class="card-body"> 
+
+    <p class="card-title">{{ p.en }} </p>
+    <p class="card-title">{{ p.bra }} </p>
+<hr/>
+    <div class="text-center">
+    <div class="text-secondary">
+    <br>
+        <span onclick="playSound()">
+ Play
+    </span>
+    </div>
+
+</div>
+
+
+</b>
+</i>
+</li>
+
+
+{% endfor %}
+</div>
+</ul>
+
+
+<hr>
+
+
+<p><span class="text-secondary">Portuguese, is spoken by approximately 288  million people</span>. <span class="text-warning">203 million in Brazil</span>, 35 million in Angola, 32 million in Mozambique, <span class="text-danger">10 million in Portugal</span>, 2 million in Guinea-Bissau</p>
+
+
+<p>In perspective <span class="text-danger">Mandarin Chinese</span> 917.8 million, <span class="text-success">Spanish</span> 460.1 million, <span class="text-secondary">English</span> 379.0 million, <span class="text-muted">French</span> 77.2 million.</p>
+
+<p><span class="text-danger">Brazil</span> has 203 million inhabitants.</p>
+
+
+
+
+
+
+</div>
+
+<script>
+
+function myFunction() {
+    var input, filter, ul, li, b, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("i");
+    for (i = 0; i < li.length; i++) {
+        b = li[i].getElementsByTagName("b")[0];
+        if (b.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+//
+
+
+
+function playSound(n){
+
+var s = "static/speech.mp3";
+
+
+document.getElementById('myAudio').src= s;
+document.getElementById('myAudio').play();
+
+}
+
+
+
+</script>
+
+{% endblock %}
+
+

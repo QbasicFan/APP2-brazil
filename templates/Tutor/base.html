@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<title>Moree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+
+<script src="https://unpkg.com/htmx.org@1.8.0"></script>
+
+
+<style>
+
+.rotate-center{-webkit-animation:rotate-center .6s ease-in-out both;animation:rotate-center .6s ease-in-out both}
+
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+
+</style>
+
+
+<body style="padding-top:100px;padding-bottom:100px;">
+
+<div class="container border border-3 border-primary text-center " style="background-color:white">
+  <h1>Travelogue/ Diário de viagem<span class="fa fa-plane" aria-hidden="true"></span></h1>
+<hr>
+
+<a href="/Tutor/" class="paper-btn btn-primary">Vocabulary</a>
+<a href="/Tutor/blog/" class="paper-btn btn-secondary"><b>B</b>razil <b>B</b>log</a>
+<a href="/Tutor/quizz/" class="paper-btn btn-danger">Quizz</a>
+<a href="/Tutor/travel/" class="paper-btn btn-success">Travel</a>
+<a href="/Tutor/about/" class="paper-btn btn-warning">About</a>
+<hr>
+{ <a href="/Tutor/add/">ADD Word</a> - <a href="/Tutor/addInfo/">ADD Info</a> }
+<hr>
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
